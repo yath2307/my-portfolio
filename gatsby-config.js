@@ -6,5 +6,5 @@ module.exports = {
     title: `yatharth-gupta-portfolio`,
     siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: [],
+  plugins: [`gatsby-plugin-netlify`],
 }
