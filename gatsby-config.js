@@ -3,8 +3,7 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `yatharth-gupta-portfolio`,
     siteUrl: `https://www.yourdomain.tld`,
   },
-  plugins: [`gatsby-plugin-netlify`],
+  plugins: [],
 }
