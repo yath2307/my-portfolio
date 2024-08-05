@@ -1,5 +1,6 @@
 module.exports = {
   email: 'yatharthgupta230799@gmail.com',
+  phone: 8630019767,
 
   socialMedia: [
     {
@@ -30,7 +31,7 @@ module.exports = {
       url: '/#jobs',
     },
     {
-      name: 'Work',
+      name: 'Projects',
       url: '/#projects',
     },
     {

@@ -1,12 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { srConfig, email } from '@config';
+import { srConfig, email, phone } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 
 const StyledContactSection = styled.section`
   max-width: 600px;
-  margin: 0 auto 100px;
   text-align: center;
 
   @media (max-width: 768px) {
@@ -38,6 +37,15 @@ const StyledContactSection = styled.section`
   .email-link {
     ${({ theme }) => theme.mixins.bigButton};
     margin-top: 50px;
+    margin-left: 20px;
+  }
+  
+  .center-align {
+    justify-content: center;
+  }
+  
+  .center-align::after {
+    display: none !important;
   }
 `;
 
@@ -55,18 +63,15 @@ const Contact = () => {
 
   return (
     <StyledContactSection id="contact" ref={revealContainer}>
-      <h2 className="numbered-heading overline">What’s Next?</h2>
-
-      <h2 className="title">Get In Touch</h2>
-
-      <p>
-        Although I’m not currently looking for any new opportunities, my inbox is always open.
-        Whether you have a question or just want to say hi, I’ll try my best to get back to you!
-      </p>
-
-      <a className="email-link" href={`mailto:${email}`}>
-        Say Hello
-      </a>
+      <h2 className="numbered-heading center-align">Contact Me</h2>
+        <p>If you're interested in working together, have any questions, or just want to say hello, feel free to reach out!
+          <br></br><br></br>
+          Address: 266, Green Park Main, Bareilly, Uttar Pradesh, 243006
+          <br></br>
+          All social media profiles attached to the buttons.
+        </p>
+        <a className="email-link" href={`mailto:${email}`}>Email</a>
+        <a className="email-link" href={`tel:${phone}`}>Call</a>
     </StyledContactSection>
   );
 };

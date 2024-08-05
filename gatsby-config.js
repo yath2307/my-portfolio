@@ -19,8 +19,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Brittany Chiang',
-        short_name: 'Brittany Chiang',
+        name: 'Yatharth Gupta',
+        short_name: 'Yatharth Gupta',
         start_url: '/',
         background_color: config.colors.darkNavy,
         theme_color: config.colors.navy,
@@ -148,5 +148,15 @@ module.exports = {
         ],
       },
     },
+    // {
+    //   resolve: `gatsby-source-git`,
+    //   options: {
+    //     name: `my-portfolio`,
+    //     remote: `https://github.com/yath2307/my-portfolio.git`,
+    //     branch: `main`,
+    //     local: '/static',
+    //     patterns: `content/**`
+    //   }
+    // }
   ],
 };
