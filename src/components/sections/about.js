@@ -141,29 +141,8 @@ const About = () => {
 
     const skills = ['Programming Languages: Java, C++, JavaScript and Python.', 'Back-end: Spring Boot, Micronaut and Flask along with API Gateway\n' +
     'management using Kong.', 'Front-end: Angular, GWT, React and Gatsby.', 'Event-Driven Architecture: RMQ, Kafka, and AWS EventBridge.', 'Data Storage & Processing: Relational databases (MariaDB, PostgreSQL) and NoSQL databases\n' +
-    '(MongoDB), along with caching solutions (Redis), rule engines (Drools), and search platforms (OpenSearch).', 'DevSecOps: Vulnerability management tools like Snyk, DefectDojo, DependencyTrack, and ThreatMapper.', 'Infrastructure & Automation: Docker, Kubernetes, Ansible, Terraform, and Jenkins for containerization,\n' +
-    'CI/CD, and automation tasks.'];
-
-    const data = [
-        {
-            id: 1,
-            courseName: 'React Basics',
-            topics: [
-                {id: 1, name: 'JSX'},
-                {id: 2, name: 'Components'},
-                {id: 3, name: 'Props and State'}
-            ]
-        },
-        {
-            id: 2,
-            courseName: 'Advanced React',
-            topics: [
-                {id: 1, name: 'Hooks'},
-                {id: 2, name: 'Context API'},
-                {id: 3, name: 'Performance Optimization'}
-            ]
-        }
-    ];
+    '(MongoDB), along with caching solutions (Redis), rule engines (Drools), and search platforms (OpenSearch).', 'DevSecOps: Vulnerability management tools like Snyk, DefectDojo, DependencyTrack, and ThreatMapper.', 'Infrastructure & Automation: Docker, Kubernetes, Ansible, Terraform and Jenkins for\n' +
+    'CI/CD and automation tasks.'];
 
     return (
         <StyledAboutSection id="about" ref={revealContainer}>

@@ -134,6 +134,14 @@ const StyledTabPanels = styled.div`
   @media (max-width: 600px) {
     margin-left: 0;
   }
+  
+  .hide-class {
+    display: none;
+  }
+  
+  .show-class {
+    display: flex;
+  }
 `;
 
 const StyledTabPanel = styled.div`
@@ -168,7 +176,7 @@ const Jobs = () => {
   const data = useStaticQuery(graphql`
     query {
       jobs: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/content/jobs/" } }
+        filter: { fileAbsolutePath: { regex: "/content/jobs/main/" }  }
         sort: { fields: [frontmatter___date], order: DESC }
       ) {
         edges {
@@ -185,10 +193,36 @@ const Jobs = () => {
           }
         }
       }
+      additionalSections: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/content/jobs/sections/" } }
+        sort: { fields: [frontmatter___date], order: DESC }
+      ) {
+        edges {
+          node {
+            frontmatter {
+              heading
+            }
+            html
+          }
+        }
+      }
     }
   `);
 
   const jobsData = data.jobs.edges;
+  const additionalData = data.additionalSections.edges;
+
+  const [showSDEData, setShowSDEData] = useState(true);
+  const toggleShowSDEData = () => {
+    setShowSDEData(true);
+    setShowSystemDesignData(false);
+  };
+
+  const [showSystemDesignData, setShowSystemDesignData] = useState(false);
+  const toggleShowSystemDesignData = () => {
+    setShowSystemDesignData(true);
+    setShowSDEData(false);
+  };
 
   const [activeTabId, setActiveTabId] = useState(0);
   const [tabFocus, setTabFocus] = useState(null);
@@ -275,32 +309,61 @@ const Jobs = () => {
             jobsData.map(({ node }, i) => {
               const { frontmatter, html } = node;
               const { title, url, company, companyDisplayName, range } = frontmatter;
+                return (
+                    <div key={`mykaarma-${i}`}>
+                      <div hidden={activeTabId !== i} className={activeTabId !== 0 ? "hide-class":"show-class"} style={{ display: activeTabId !== i ? 'none':'' }}>
+                        <StyledTabButton isActive={showSDEData} onClick={() => toggleShowSDEData()}>Software Development</StyledTabButton>
+                        <StyledTabButton isActive={showSystemDesignData} onClick={() => toggleShowSystemDesignData()}>System Design</StyledTabButton>
+                      </div>
+                      {(company === 'myKaarma' && showSystemDesignData) && (<CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
+                        <StyledTabPanel
+                            id={`panel-${i}`}
+                            role="tabpanel"
+                            tabIndex={activeTabId === i ? '0' : '-1'}
+                            aria-labelledby={`tab-${i}`}
+                            aria-hidden={activeTabId !== i}
+                            hidden={activeTabId !== i}>
+                          <div>
+                            {additionalData.map(({node}, index) => {
+                              const { frontmatter, html } = node;
+                              const { heading } = frontmatter;
 
-              return (
-                <CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
-                  <StyledTabPanel
-                    id={`panel-${i}`}
-                    role="tabpanel"
-                    tabIndex={activeTabId === i ? '0' : '-1'}
-                    aria-labelledby={`tab-${i}`}
-                    aria-hidden={activeTabId !== i}
-                    hidden={activeTabId !== i}>
-                    <h3>
-                      <span>{title}</span>
-                      <span className="company">
+                              return (
+                                  <div key={index}>
+                                    <h3>{heading}</h3>
+                                    <div dangerouslySetInnerHTML={{ __html: html }} />
+                                  </div>
+                              );
+                            })}
+                          </div>
+                        </StyledTabPanel>
+                      </CSSTransition>)}
+                      {(company !== 'myKaarma' || showSDEData) && (<CSSTransition key={i} in={activeTabId === i} timeout={250} classNames="fade">
+                        <StyledTabPanel
+                            id={`panel-${i}`}
+                            role="tabpanel"
+                            tabIndex={activeTabId === i ? '0' : '-1'}
+                            aria-labelledby={`tab-${i}`}
+                            aria-hidden={activeTabId !== i}
+                            hidden={activeTabId !== i}>
+                          <h3>
+                            <span>{title}</span>
+                            <span className="company">
                         &nbsp;@&nbsp;
-                        <a href={url} className="inline-link">
+                              <a href={url} className="inline-link">
                           {companyDisplayName}
                         </a>
                       </span>
-                    </h3>
+                          </h3>
 
-                    <p className="range">{range}</p>
+                          <p className="range">{range}</p>
 
-                    <div dangerouslySetInnerHTML={{ __html: html }} />
-                  </StyledTabPanel>
-                </CSSTransition>
-              );
+                          <div dangerouslySetInnerHTML={{ __html: html }} />
+
+                        </StyledTabPanel>
+                      </CSSTransition>)}
+                    </div>
+                );
             })}
         </StyledTabPanels>
       </div>
