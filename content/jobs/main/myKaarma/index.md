@@ -14,3 +14,4 @@ url: 'https://mykaarma.com/'
 - Setting up a mail server with all DNS settings to prevent the hard bouncing of mails reducing the rate from ~4% to ~0.2%.
 - Automated workflow system using drools reducing setup time from 1 day to ~2 mins. Exposure: Drools, RabbitMQ, Spring boot, Angular.
 - Built vulnerability and license compliance tracker and control system which helped reduce vulnerabilities by ~60% in just 4 months.
+- Optimized billing API performance making it more reliable and resilient under heavy loads. Fail rates reduced from ~12% to less than 0.5%.
