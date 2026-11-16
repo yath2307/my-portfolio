@@ -13,4 +13,4 @@ company: ''
 showInProjects: true
 ---
 
-A project to built my own portfolio website showcasing all my work and experience.
+A project to build my own portfolio website showcasing all my work and experience.

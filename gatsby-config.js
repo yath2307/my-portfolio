@@ -4,7 +4,7 @@ module.exports = {
   siteMetadata: {
     title: 'Yatharth Gupta',
     description:
-      'Yatharth Gupta is a technology enthusiast with more than 5 years of experience in designing, developing and optimizing software solutions.',
+      'Yatharth Gupta is a Senior Software Engineer and Team Lead at myKaarma, building AI agents and the platforms that apps run on.',
     siteUrl: 'https://yatharthgupta.info', // No trailing slash allowed!
     image: '/og.png', // Path to your image you placed in the 'static' folder
   },

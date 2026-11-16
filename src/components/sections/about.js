@@ -15,10 +15,6 @@ const StyledAboutSection = styled.section`
   .font-small {
     font-size: var(--fz-lg);
   }
-  
-  .center-align {
-    text-align: center;
-  }
 
   .inner {
     display: grid;
@@ -192,16 +188,17 @@ const About = () => {
               />
             </div>
             <div>
-              <h2 className="personal-life-header center-align">Personal Life:</h2>
-              <p className="center-align font-small">
-                I'm a bit of workaholic guy and loves playing sports and working out at gym. I regularly play Badminton, Table Tennis and
-                Cricket. In my free time I really enjoy watching Anime with a cup of hot coffee. I'm not
-                much into movies but enjoy watching good recommendations (especially horror!).
-                <br></br>I'm interested in finance and trading as well and enjoy reading articles
-                and exploring good investment options.
-                <br></br>I want to start my own company or business someday and waiting for a good
-                opportunity to strike and in the meantime I'll continue to get better and hone my
-                skills.
+              <h2 className="personal-life-header">Personal Life:</h2>
+              <p className="font-small">
+                I'm a bit of a workaholic, but I also love sports and working out at the gym. I
+                regularly play badminton, table tennis and cricket. In my free time I enjoy anime with
+                a hot cup of coffee. I'm not much into movies, but I never say no to a good
+                recommendation (especially horror!).
+              </p>
+              <p className="font-small">
+                I'm also into finance and trading, and enjoy reading about markets and exploring good
+                investment options. One day I'd love to build a company of my own; until then, I'm
+                focused on getting better at what I do.
               </p>
             </div>
           </StyledPic>
