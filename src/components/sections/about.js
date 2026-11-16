@@ -56,6 +56,10 @@ const StyledText = styled.div`
         font-size: var(--fz-sm);
         line-height: 12px;
       }
+
+      .skill-group {
+        color: var(--lightest-slate);
+      }
     }
   }
 `;
@@ -122,13 +126,18 @@ const About = () => {
         sr.reveal(revealContainer.current, srConfig());
     }, []);
 
-    const skills = ['Programming Languages: Java, C++, JavaScript and Python.', 'Back-end: Spring Boot, Micronaut and Flask along with API Gateway\n' +
-    'management using Kong.', 'Front-end: Angular, GWT, React and Gatsby.', 'Event-Driven Architecture: RMQ, Kafka, and AWS EventBridge.', 'Data Storage & Processing: Relational databases (MariaDB, PostgreSQL) and NoSQL databases\n' +
-    '(MongoDB), along with caching solutions (Redis), rule engines (Drools), and search platforms (OpenSearch).', 'DevSecOps: Vulnerability management tools like Snyk, DefectDojo, DependencyTrack, and ThreatMapper.', 'Infrastructure & Automation: Docker, Kubernetes, Ansible, Terraform and Jenkins for\n' +
-    'CI/CD and automation tasks.',
-    'AI Frameworks: LangChain, LangGraph, PydanticAI and Flowise for building AI agents and LLM-powered workflows.',
-    'AI Techniques: RAG, agentic workflows, prompt engineering, and tool calling with multi-tool orchestration.',
-    'AI Infrastructure: Vector databases (pgvector), MCP servers, and LLM APIs from OpenAI and Anthropic.'];
+    const skills = [
+      { group: 'AI Frameworks', items: ['LangChain', 'LangGraph', 'PydanticAI', 'Flowise'] },
+      { group: 'AI Techniques', items: ['RAG', 'agentic workflows', 'prompt engineering', 'tool calling', 'multi-tool orchestration'] },
+      { group: 'AI Infra', items: ['pgvector', 'MCP servers', 'OpenAI & Anthropic APIs'] },
+      { group: 'Languages', items: ['Python', 'Java', 'JavaScript', 'C++'] },
+      { group: 'Back-end', items: ['Spring Boot', 'Micronaut', 'Flask', 'Kong'] },
+      { group: 'Front-end', items: ['Angular', 'React', 'GWT', 'Gatsby'] },
+      { group: 'Databases', items: ['PostgreSQL', 'MariaDB', 'MongoDB', 'Redis', 'OpenSearch'] },
+      { group: 'Event Systems', items: ['RabbitMQ', 'Kafka', 'AWS EventBridge', 'Drools'] },
+      { group: 'Infrastructure', items: ['Docker', 'Kubernetes', 'Terraform', 'Ansible', 'Jenkins'] },
+      { group: 'DevSecOps', items: ['Snyk', 'DefectDojo', 'Dependency-Track', 'ThreatMapper'] },
+    ];
 
     return (
       <StyledAboutSection id="about" ref={revealContainer}>
@@ -138,35 +147,37 @@ const About = () => {
           <StyledText>
             <div>
               <p>
-                Hello! My name is Yatharth and I’m a technology enthusiast working as a software
-                engineer with more than 5 years of experience now.
-                <br></br>
-                <br></br>Since childhood, I've harboured a deep fascination with mathematics and
-                problem-solving. This passion naturally evolved into a love for computer programming
-                during my college years at IIT BHU, where I earned my Bachelor's degree in
-                Electronics Engineering in 2021.
-                {/*<br></br><br></br>During my college, I’ve had the privilege of working as an intern at*/}
-                {/*<br></br><a href="https://mykaarma.com/">myKaarma</a> (A year long internship)*/}
-                {/*<br></br><a href="https://www.rivia.ai/">Rivia.AI</a> (3 months internship in a newly found startup)*/}
-                <br></br>
-                <br></br>Following graduation, I embarked on my software development journey at{' '}
-                <a href="https://mykaarma.com/">myKaarma</a>, where I was surrounded by brilliant
-                minds and a fast-paced environment. This experience was instrumental in honing my
-                programming skills and propelling me into a confident and well-rounded developer.
-                I've had the privilege of driving multiple major projects solo, leading each to
-                successful completion.
+                Hello! I'm Yatharth. Since childhood I've loved mathematics and problem-solving, and
+                at IIT BHU, where I earned my Bachelor's in Electronics Engineering in 2021, that
+                turned into a love for programming.
+              </p>
+              {/*<br></br><br></br>During my college, I’ve had the privilege of working as an intern at*/}
+              {/*<br></br><a href="https://mykaarma.com/">myKaarma</a> (A year long internship)*/}
+              {/*<br></br><a href="https://www.rivia.ai/">Rivia.AI</a> (3 months internship in a newly found startup)*/}
+
+              <p>
+                I joined <a href="https://mykaarma.com/">myKaarma</a> full-time after graduating,
+                following a year there as an intern. Its brilliant people and fast pace made me a
+                well-rounded engineer, and I've driven several major projects solo, from design to
+                production. These days I lead a team, run the mkOS project and build AI agents that
+                people across the company use.
               </p>
 
               <p>
-                I also recently{' '}
-                <a href="https://medium.com/@yatharthgupta230799">started writing blogs</a> that is
-                mainly focused on Software Development Ideas, technologies and core concepts.
+                I also write about software development ideas, technologies and core concepts on{' '}
+                <a href="https://medium.com/@yatharthgupta230799">Medium</a>.
               </p>
 
-              <p>Here are a few technologies I’ve been working with:</p>
+              <p>Here are the technologies I work with most:</p>
             </div>
 
-            <ul className="skills-list">{skills && skills.map((skill, i) => <li>{skill}</li>)}</ul>
+            <ul className="skills-list">
+              {skills.map(({ group, items }) => (
+                <li key={group}>
+                  <span className="skill-group">{group}:</span> {items.join(' · ')}
+                </li>
+              ))}
+            </ul>
           </StyledText>
 
           <StyledPic>
