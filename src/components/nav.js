@@ -7,6 +7,7 @@ import { navLinks } from '@config';
 import { loaderDelay } from '@utils';
 import { useScrollDirection, usePrefersReducedMotion } from '@hooks';
 import { IconLogo } from '@components/icons';
+import Menu from '@components/menu';
 
 const StyledHeader = styled.header`
   ${({ theme }) => theme.mixins.flexBetween};
@@ -195,6 +196,7 @@ const Nav = ({ isHome }) => {
               <div>{ResumeLink}</div>
             </StyledLinks>
 
+            <Menu />
           </>
         ) : (
           <>
@@ -231,6 +233,14 @@ const Nav = ({ isHome }) => {
                 )}
               </TransitionGroup>
             </StyledLinks>
+
+            <TransitionGroup component={null}>
+              {isMounted && (
+                <CSSTransition classNames={fadeClass} timeout={timeout}>
+                  <Menu />
+                </CSSTransition>
+              )}
+            </TransitionGroup>
           </>
         )}
       </StyledNav>
