@@ -156,7 +156,8 @@ const About = () => {
                 following a year there as an intern. Its brilliant people and fast pace made me a
                 well-rounded engineer, and I've driven several major projects solo, from design to
                 production. These days I lead a team, run the mkOS project and build AI agents that
-                people across the company use.
+                people across the company use. I've also taken second place at an AI hackathon twice,
+                in 2023 and 2025.
               </p>
 
               <p>
