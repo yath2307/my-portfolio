@@ -126,7 +126,10 @@ const About = () => {
     const skills = ['Programming Languages: Java, C++, JavaScript and Python.', 'Back-end: Spring Boot, Micronaut and Flask along with API Gateway\n' +
     'management using Kong.', 'Front-end: Angular, GWT, React and Gatsby.', 'Event-Driven Architecture: RMQ, Kafka, and AWS EventBridge.', 'Data Storage & Processing: Relational databases (MariaDB, PostgreSQL) and NoSQL databases\n' +
     '(MongoDB), along with caching solutions (Redis), rule engines (Drools), and search platforms (OpenSearch).', 'DevSecOps: Vulnerability management tools like Snyk, DefectDojo, DependencyTrack, and ThreatMapper.', 'Infrastructure & Automation: Docker, Kubernetes, Ansible, Terraform and Jenkins for\n' +
-    'CI/CD and automation tasks.'];
+    'CI/CD and automation tasks.',
+    'AI Frameworks: LangChain, LangGraph, PydanticAI and Flowise for building AI agents and LLM-powered workflows.',
+    'AI Techniques: RAG, agentic workflows, prompt engineering, and tool calling with multi-tool orchestration.',
+    'AI Infrastructure: Vector databases (pgvector), MCP servers, and LLM APIs from OpenAI and Anthropic.'];
 
     return (
       <StyledAboutSection id="about" ref={revealContainer}>
