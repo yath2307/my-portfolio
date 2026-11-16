@@ -126,7 +126,10 @@ const About = () => {
     const skills = ['Programming Languages: Java, C++, JavaScript and Python.', 'Back-end: Spring Boot, Micronaut and Flask along with API Gateway\n' +
     'management using Kong.', 'Front-end: Angular, GWT, React and Gatsby.', 'Event-Driven Architecture: RMQ, Kafka, and AWS EventBridge.', 'Data Storage & Processing: Relational databases (MariaDB, PostgreSQL) and NoSQL databases\n' +
     '(MongoDB), along with caching solutions (Redis), rule engines (Drools), and search platforms (OpenSearch).', 'DevSecOps: Vulnerability management tools like Snyk, DefectDojo, DependencyTrack, and ThreatMapper.', 'Infrastructure & Automation: Docker, Kubernetes, Ansible, Terraform and Jenkins for\n' +
-    'CI/CD and automation tasks.'];
+    'CI/CD and automation tasks.',
+    'AI Frameworks: LangChain, LangGraph, PydanticAI and Flowise for building AI agents and LLM-powered workflows.',
+    'AI Techniques: RAG, agentic workflows, prompt engineering, and tool calling with multi-tool orchestration.',
+    'AI Infrastructure: Vector databases (pgvector), MCP servers, and LLM APIs from OpenAI and Anthropic.'];
 
     return (
       <StyledAboutSection id="about" ref={revealContainer}>
@@ -137,7 +140,7 @@ const About = () => {
             <div>
               <p>
                 Hello! My name is Yatharth and I’m a technology enthusiast working as a software
-                engineer with more than 4 years of experience now.
+                engineer with more than 5 years of experience now.
                 <br></br>
                 <br></br>Since childhood, I've harboured a deep fascination with mathematics and
                 problem-solving. This passion naturally evolved into a love for computer programming

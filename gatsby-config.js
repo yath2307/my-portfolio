@@ -4,8 +4,8 @@ module.exports = {
   siteMetadata: {
     title: 'Yatharth Gupta',
     description:
-      'Yatharth Gupta is a technology enthusiast with more than 4 years of experience in designing, developing and optimizing software solutions.',
-    siteUrl: 'https://yatharthgupta.com', // No trailing slash allowed!
+      'Yatharth Gupta is a technology enthusiast with more than 5 years of experience in designing, developing and optimizing software solutions.',
+    siteUrl: 'https://yatharthgupta.info', // No trailing slash allowed!
     image: '', // Path to your image you placed in the 'static' folder
   },
   plugins: [
