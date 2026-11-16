@@ -170,7 +170,9 @@ const About = () => {
             <ul className="skills-list">
               {skills.map(({ group, items }) => (
                 <li key={group}>
-                  <span className="skill-group">{group}:</span> {items.join(' · ')}
+                  {/* Non-breaking spaces inside each tag and before each dot, so lines only break between tags. */}
+                  <span className="skill-group">{group}:</span>{' '}
+                  {items.map(item => item.replace(/ /g, ' ')).join(' · ')}
                 </li>
               ))}
             </ul>
