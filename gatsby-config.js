@@ -6,7 +6,7 @@ module.exports = {
     description:
       'Yatharth Gupta is a technology enthusiast with more than 5 years of experience in designing, developing and optimizing software solutions.',
     siteUrl: 'https://yatharthgupta.info', // No trailing slash allowed!
-    image: '', // Path to your image you placed in the 'static' folder
+    image: '/og.png', // Path to your image you placed in the 'static' folder
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
