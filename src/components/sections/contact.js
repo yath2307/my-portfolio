@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
-import { srConfig, email, phone } from '@config';
+import { srConfig, email, socialMedia } from '@config';
 import sr from '@utils/sr';
 import { usePrefersReducedMotion } from '@hooks';
 
@@ -49,6 +49,8 @@ const StyledContactSection = styled.section`
   }
 `;
 
+const linkedin = socialMedia.find(({ name }) => name === 'Linkedin');
+
 const Contact = () => {
   const revealContainer = useRef(null);
   const prefersReducedMotion = usePrefersReducedMotion();
@@ -64,14 +66,11 @@ const Contact = () => {
   return (
     <StyledContactSection id="contact" ref={revealContainer}>
       <h2 className="numbered-heading center-align">Contact Me</h2>
-        <p>If you're interested in working together, have any questions, or just want to say hello, feel free to reach out!
-          <br></br><br></br>
-          Address: 266, Green Park Main, Bareilly, Uttar Pradesh, 243006
-          <br></br>
-          All social media profiles attached to the buttons.
-        </p>
+        <p>If you're interested in working together, have any questions, or just want to say hello, feel free to reach out!</p>
         <a className="email-link" href={`mailto:${email}`}>Email</a>
-        <a className="email-link" href={`tel:${phone}`}>Call</a>
+        <a className="email-link" href={linkedin.url} target="_blank" rel="noopener noreferrer">
+          LinkedIn
+        </a>
     </StyledContactSection>
   );
 };
