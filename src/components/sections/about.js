@@ -137,7 +137,7 @@ const About = () => {
             <div>
               <p>
                 Hello! My name is Yatharth and I’m a technology enthusiast working as a software
-                engineer with more than 4 years of experience now.
+                engineer with more than 5 years of experience now.
                 <br></br>
                 <br></br>Since childhood, I've harboured a deep fascination with mathematics and
                 problem-solving. This passion naturally evolved into a love for computer programming

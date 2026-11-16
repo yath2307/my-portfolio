@@ -1,10 +1,10 @@
 ---
-date: '2021-05-01'
-title: 'Software Development Engineer II'
+date: '2021-06-01'
+title: 'Senior Software Engineer (Team Lead - AAA)'
 company: 'myKaarma'
 companyDisplayName: 'myKaarma'
 location: 'Noida, India'
-range: 'May 2021 - Present'
+range: 'Jun 2021 - Present'
 url: 'https://mykaarma.com/'
 ---
 

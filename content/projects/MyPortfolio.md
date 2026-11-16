@@ -2,7 +2,7 @@
 date: '2024-07-01'
 title: 'My Portfolio'
 github: 'https://github.com/yath2307/my-portfolio'
-external: 'https://yatharthgupta.com'
+external: 'https://yatharthgupta.info'
 tech:
   - JavaScript
   - React
