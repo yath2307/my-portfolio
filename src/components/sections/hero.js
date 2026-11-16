@@ -61,18 +61,25 @@ const Hero = () => {
 
     const one = <h1 className="medium-heading">Hi, my name is</h1>;
     const two = <h2 className="big-heading">Yatharth Gupta</h2>;
-    const three = <h3 className="medium-heading">I design, develop and optimise software solutions.</h3>;
+    const three = <h3 className="medium-heading">I build AI agents and the platforms that apps run on.</h3>;
   const four = (
-    <a
-      className="email-link"
-      href="https://medium.com/@yatharthgupta230799"
-      target="_blank"
-      rel="noreferrer">
-      Check out my blogs!
+    <p>
+      I'm a Senior Software Engineer and Team Lead at myKaarma. Right now I'm leading mkOS, the new
+      platform that all of our dealership apps plug into, and building AI agents that teams across the
+      company use. I also write about software engineering on{' '}
+      <a href="https://medium.com/@yatharthgupta230799" target="_blank" rel="noreferrer">
+        Medium
+      </a>
+      .
+    </p>
+  );
+  const five = (
+    <a className="email-link" href="/#projects">
+      See my work
     </a>
   );
 
-  const items = [one, two, three, four];
+  const items = [one, two, three, four, five];
 
   return (
     <StyledHeroSection>
