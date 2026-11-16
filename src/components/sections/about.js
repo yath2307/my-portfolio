@@ -7,7 +7,6 @@ import {usePrefersReducedMotion} from '@hooks';
 
 const StyledAboutSection = styled.section`
   max-width: 900px;
-  width: max-content;
 
   .personal-life-header {
     margin-top: 40px;
