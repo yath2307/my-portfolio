@@ -1,14 +1,16 @@
 ---
-date: '2' title: 'PR Automation Bot' cover: './bot.png' github: 'https://github.com/yath2307/PR-Automation-Bot'
+date: '2024-08-05'
+title: 'PR Automation Bot'
+github: 'https://github.com/yath2307/PR-Automation-Bot'
 external: ''
 tech:
-
-- Probot
-- Github_Bot
-- Github_Webhooks
-- JavaScript
-- AWS_Lambda
-
+  - Probot
+  - Github_Bot
+  - Github_Webhooks
+  - JavaScript
+  - AWS_Lambda
+company: ''
+showInProjects: true
 ---
 
 I developed this bot as a side project for myKaarma. Whenever we take BM, the PR approval is dismissed, and it's a

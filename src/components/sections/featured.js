@@ -348,7 +348,7 @@ const Featured = () => {
   return (
     <section id="projects">
       <h2 className="numbered-heading" ref={revealTitle}>
-        My Personal Projects
+        Things I've Built
       </h2>
 
       <StyledProjectsGrid>
@@ -357,6 +357,8 @@ const Featured = () => {
             const { frontmatter, html } = node;
             const { external, title, tech, github, cover, cta } = frontmatter;
             const image = getImage(cover);
+            const titleLink = github || external;
+            const imageLink = external || github;
 
             return (
               <StyledProject key={i} ref={el => (revealProjects.current[i] = el)}>
@@ -365,7 +367,7 @@ const Featured = () => {
                     <p className="project-overline">Featured Project</p>
 
                     <h3 className="project-title">
-                      <a href={github}>{title}</a>
+                      {titleLink ? <a href={titleLink}>{title}</a> : title}
                     </h3>
 
                     <div
@@ -402,7 +404,8 @@ const Featured = () => {
                 </div>
 
                 <div className="project-image">
-                  <a href={external ? external : github ? github : '#'}>
+                  {/* Work projects have no public link: without an href the image keeps its hover effect but isn't clickable. */}
+                  <a href={imageLink || undefined}>
                     <GatsbyImage image={image} alt={title} className="img" />
                   </a>
                 </div>
