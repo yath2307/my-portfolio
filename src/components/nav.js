@@ -39,7 +39,7 @@ const StyledHeader = styled.header`
         height: var(--nav-scroll-height);
         transform: translateY(0px);
         background-color: rgba(10, 25, 47, 0.85);
-        box-shadow: 0 10px 30px -10px var(--navy-shadow);
+        box-shadow: 0 10px 30px -10px var(--shadow);
       `};
 
     ${props =>
@@ -48,7 +48,7 @@ const StyledHeader = styled.header`
       css`
         height: var(--nav-scroll-height);
         transform: translateY(calc(var(--nav-scroll-height) * -1));
-        box-shadow: 0 10px 30px -10px var(--navy-shadow);
+        box-shadow: 0 10px 30px -10px var(--shadow);
       `};
   }
 `;
@@ -66,7 +66,7 @@ const StyledNav = styled.nav`
     ${({ theme }) => theme.mixins.flexCenter};
 
     a {
-      color: var(--green);
+      color: var(--accent);
       width: 42px;
       height: 42px;
       position: relative;
@@ -107,7 +107,7 @@ const StyledLinks = styled.div`
         &:before {
           content: '0' counter(item) '.';
           margin-right: 5px;
-          color: var(--green);
+          color: var(--accent);
           font-size: var(--fz-xxs);
           text-align: right;
         }

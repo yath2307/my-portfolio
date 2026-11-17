@@ -20,7 +20,7 @@ const StyledTabPanel = styled.div`
     }
     
     .subheading {
-        color: var(--green);
+        color: var(--accent);
     }
     
     .parent-div {
