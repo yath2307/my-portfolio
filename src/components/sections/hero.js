@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { socialMedia } from '@config';
+import { Icon } from '@components/icons';
 
 const StyledHeroSection = styled.section`
   ${({ theme }) => theme.mixins.flexCenter};
@@ -37,9 +39,39 @@ const StyledHeroSection = styled.section`
     max-width: 540px;
   }
 
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px 30px;
+    margin-top: 50px;
+  }
+
   .email-link {
     ${({ theme }) => theme.mixins.bigButton};
-    margin-top: 50px;
+  }
+
+  .hero-social {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--light-slate);
+
+    a {
+      padding: 10px;
+
+      &:hover,
+      &:focus {
+        transform: translateY(-3px);
+      }
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
   }
 `;
 
@@ -59,9 +91,20 @@ const Hero = () => {
     </p>
   );
   const five = (
-    <a className="email-link" href="/#projects">
-      See my work
-    </a>
+    <div className="hero-actions">
+      <a className="email-link" href="/#projects">
+        See my work
+      </a>
+      <ul className="hero-social">
+        {socialMedia.map(({ name, url }) => (
+          <li key={name}>
+            <a href={url} aria-label={name} target="_blank" rel="noreferrer">
+              <Icon name={name} />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 
   const items = [one, two, three, four, five];
