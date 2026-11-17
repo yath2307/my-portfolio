@@ -197,6 +197,11 @@ const GlobalStyle = createGlobalStyle`
     font-size: clamp(26px, 5vw, var(--fz-heading));
     white-space: nowrap;
 
+    /* Long headings like "My Professional Experience:" don't fit on one line on phones. */
+    @media (max-width: 600px) {
+      white-space: normal;
+    }
+
     &:before {
       position: relative;
       bottom: 4px;
@@ -231,6 +236,7 @@ const GlobalStyle = createGlobalStyle`
         width: 100%;
       }
       @media (max-width: 600px) {
+        flex: 1 0 40px;
         margin-left: 10px;
       }
     }
