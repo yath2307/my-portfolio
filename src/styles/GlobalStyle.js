@@ -188,7 +188,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: clamp(40px, 8vw, 60px);
   }
 
-  .numbered-heading {
+  .section-heading {
     display: flex;
     align-items: center;
     position: relative;
@@ -200,23 +200,6 @@ const GlobalStyle = createGlobalStyle`
     /* Long headings like "My Professional Experience:" don't fit on one line on phones. */
     @media (max-width: 600px) {
       white-space: normal;
-    }
-
-    &:before {
-      position: relative;
-      bottom: 4px;
-      counter-increment: section;
-      content: '0' counter(section) '.';
-      margin-right: 10px;
-      color: var(--accent);
-      font-family: var(--font-mono);
-      font-size: clamp(var(--fz-md), 3vw, var(--fz-xl));
-      font-weight: 400;
-
-      @media (max-width: 480px) {
-        margin-bottom: -3px;
-        margin-right: 5px;
-      }
     }
 
     &:after {

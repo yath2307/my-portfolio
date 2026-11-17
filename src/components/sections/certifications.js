@@ -68,7 +68,7 @@ const Certifications = () => {
 
   return (
     <StyledTabPanel id="certifications" role="tabpanel">
-      <h2 className="numbered-heading">My Certifications:</h2>
+      <h2 className="section-heading">My Certifications:</h2>
 
       <div className="inner">
         <div className="parent-div">

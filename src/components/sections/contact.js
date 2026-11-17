@@ -65,7 +65,7 @@ const Contact = () => {
 
   return (
     <StyledContactSection id="contact" ref={revealContainer}>
-      <h2 className="numbered-heading center-align">Contact Me</h2>
+      <h2 className="section-heading center-align">Contact Me</h2>
         <p>If you're interested in working together, have any questions, or just want to say hello, feel free to reach out!</p>
         <a className="email-link" href={`mailto:${email}`}>Email</a>
         <a className="email-link" href={linkedin.url} target="_blank" rel="noopener noreferrer">

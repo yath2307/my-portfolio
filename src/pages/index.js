@@ -1,16 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
 import { Layout, Hero, About, Jobs, Featured, Projects, Contact, Certifications } from '@components';
-
-const StyledMainContainer = styled.main`
-  counter-reset: section;
-`;
 
 const IndexPage = ({ location }) => (
 
   <Layout location={location}>
-    <StyledMainContainer className="fillHeight">
+    <main className="fillHeight">
       <Hero />
       <About />
       <Jobs />
@@ -18,7 +13,7 @@ const IndexPage = ({ location }) => (
       <Projects />
       <Certifications />
       <Contact />
-    </StyledMainContainer>
+    </main>
   </Layout>
 );
 

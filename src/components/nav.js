@@ -59,7 +59,6 @@ const StyledNav = styled.nav`
   width: 100%;
   color: var(--lightest-slate);
   font-family: var(--font-mono);
-  counter-reset: item 0;
   z-index: 12;
 
   .logo {
@@ -98,19 +97,10 @@ const StyledLinks = styled.div`
     li {
       margin: 0 5px;
       position: relative;
-      counter-increment: item 1;
       font-size: var(--fz-xs);
 
       a {
         padding: 10px;
-
-        &:before {
-          content: '0' counter(item) '.';
-          margin-right: 5px;
-          color: var(--accent);
-          font-size: var(--fz-xxs);
-          text-align: right;
-        }
       }
     }
   }
