@@ -2,24 +2,24 @@ import { css } from 'styled-components';
 
 const variables = css`
   :root {
-    --dark-navy: #020c1b;
-    --navy: #0a192f;
-    --light-navy: #112240;
-    --lightest-navy: #233554;
-    --navy-shadow: rgba(2, 12, 27, 0.7);
-    --dark-slate: #495670;
-    --slate: #8892b0;
-    --light-slate: #a8b2d1;
-    --lightest-slate: #ccd6f6;
-    --white: #e6f1ff;
-    --green: #64ffda;
-    --green-tint: rgba(100, 255, 218, 0.1);
+    --bg-dark: #0b0c0e;
+    --bg: #121316;
+    --surface: #1b1d21;
+    --surface-light: #2b2e33;
+    --shadow: rgba(0, 0, 0, 0.6);
+    --dark-slate: #5f6670;
+    --slate: #9ba1aa;
+    --light-slate: #b9bec6;
+    --lightest-slate: #e4e6ea;
+    --white: #f3f4f6;
+    --accent: #ffb454;
+    --accent-tint: rgba(255, 180, 84, 0.1);
     --pink: #f57dff;
     --blue: #57cbff;
 
-    --font-sans: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui,
+    --font-sans: 'Space Grotesk', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui,
       sans-serif;
-    --font-mono: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
 
     --fz-xxs: 12px;
     --fz-xs: 13px;
@@ -35,7 +35,6 @@ const variables = css`
     --nav-scroll-height: 70px;
 
     --tab-height: 42px;
-    --tab-width: 120px;
 
     --easing: cubic-bezier(0.645, 0.045, 0.355, 1);
     --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);

@@ -7,11 +7,11 @@ const QUERY = '(prefers-reduced-motion: no-preference)';
 const isRenderingOnServer = typeof window === 'undefined';
 
 const getInitialState = () =>
-  // For our initial server render, we won't know if the user
-  // prefers reduced motion, but it doesn't matter. This value
-  // will be overwritten on the client, before any animations
-  // occur.
-  isRenderingOnServer ? true : !window.matchMedia(QUERY).matches;
+  // The server can't know the visitor's preference. Assume the common
+  // case (no preference) so the server HTML matches the browser's first
+  // render and React can hydrate it. Visitors who do prefer reduced
+  // motion get a client-side re-render instead.
+  isRenderingOnServer ? false : !window.matchMedia(QUERY).matches;
 function usePrefersReducedMotion() {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(getInitialState);
   useEffect(() => {

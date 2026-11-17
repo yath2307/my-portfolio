@@ -20,13 +20,17 @@ const StyledTabPanel = styled.div`
     }
     
     .subheading {
-        color: var(--green);
+        color: var(--accent);
     }
     
     .parent-div {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
     }
     
     .main-cred-div {
@@ -64,7 +68,7 @@ const Certifications = () => {
 
   return (
     <StyledTabPanel id="certifications" role="tabpanel">
-      <h2 className="numbered-heading">My Certifications:</h2>
+      <h2 className="section-heading">My Certifications:</h2>
 
       <div className="inner">
         <div className="parent-div">

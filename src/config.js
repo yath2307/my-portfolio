@@ -1,6 +1,5 @@
 module.exports = {
   email: 'yatharthgupta230799@gmail.com',
-  phone: 8630019767,
 
   socialMedia: [
     {
@@ -45,9 +44,9 @@ module.exports = {
   ],
 
   colors: {
-    green: '#64ffda',
-    navy: '#0a192f',
-    darkNavy: '#020c1b',
+    accent: '#ffb454',
+    bg: '#121316',
+    bgDark: '#0b0c0e',
   },
 
   srConfig: (delay = 200, viewFactor = 0.25) => ({

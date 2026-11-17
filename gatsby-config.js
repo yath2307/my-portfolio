@@ -4,9 +4,9 @@ module.exports = {
   siteMetadata: {
     title: 'Yatharth Gupta',
     description:
-      'Yatharth Gupta is a technology enthusiast with more than 5 years of experience in designing, developing and optimizing software solutions.',
+      'Yatharth Gupta is a Senior Software Engineer and Team Lead at myKaarma, building AI agents and the platforms that apps run on.',
     siteUrl: 'https://yatharthgupta.info', // No trailing slash allowed!
-    image: '', // Path to your image you placed in the 'static' folder
+    image: '/og.png', // Path to your image you placed in the 'static' folder
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -22,8 +22,8 @@ module.exports = {
         name: 'Yatharth Gupta',
         short_name: 'Yatharth Gupta',
         start_url: '/',
-        background_color: config.colors.darkNavy,
-        theme_color: config.colors.navy,
+        background_color: config.colors.bgDark,
+        theme_color: config.colors.bg,
         display: 'minimal-ui',
         icon: 'src/images/logo.png',
       },
@@ -69,7 +69,7 @@ module.exports = {
               maxWidth: 700,
               linkImagesToOriginal: true,
               quality: 90,
-              tracedSVG: { color: config.colors.green },
+              tracedSVG: { color: config.colors.accent },
             },
           },
           {
