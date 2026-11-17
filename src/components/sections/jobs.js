@@ -37,12 +37,24 @@ const StyledTabList = styled.div`
     overflow-x: auto;
     width: calc(100% + 100px);
     padding-left: 50px;
+    padding-right: 50px;
     margin-left: -50px;
     margin-bottom: 30px;
+
+    /* Each tab is as wide as its company name, so long names don't run into the next tab.
+       The row scrolls sideways when the tabs don't fit, and the active tab is underlined. */
+    [role='tab'] {
+      flex: none;
+      width: auto;
+    }
+    [aria-selected='true'] {
+      border-bottom-color: var(--accent);
+    }
   }
   @media (max-width: 480px) {
     width: calc(100% + 50px);
     padding-left: 25px;
+    padding-right: 25px;
     margin-left: -25px;
   }
 
@@ -112,17 +124,9 @@ const StyledHighlight = styled.div`
   transition: transform 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
   transition-delay: 0.1s;
 
+  /* On phones the tabs differ in width, so the active tab's own underline replaces this bar. */
   @media (max-width: 600px) {
-    top: auto;
-    bottom: 0;
-    width: 100%;
-    max-width: var(--tab-width);
-    height: 2px;
-    margin-left: 50px;
-    transform: translateX(calc(${({ activeTabId }) => activeTabId} * var(--tab-width)));
-  }
-  @media (max-width: 480px) {
-    margin-left: 25px;
+    display: none;
   }
 `;
 
